@@ -15,13 +15,19 @@ export default function Card() {
 
   function handleMouseMove(event) {
     const card = cardRef.current;
-    const { offsetWidth: width, offsetHeight: height } = card;
-    const { clientX, clientY } = event;
-    const x = clientX - card.offsetLeft - width / 2;
-    const y = clientY - card.offsetTop - height / 2;
-    var mult = 40;
-    setXRotation((y / height) * mult);
-    setYRotation((x / width) * mult);
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const deltaX = x - centerX;
+    const deltaY = centerY - y;
+
+    const mult = 25; // reduce multiplier to limit spin
+    setXRotation((deltaY / centerY) * mult);
+    setYRotation((deltaX / centerX) * mult);
   }
   function handleMouseEnter() {
     //const img = imgRef.current;
