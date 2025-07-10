@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  min-width: 320px;
+  min-width: 100vh;
   min-height: 100vh;
   background: linear-gradient(160deg, #330000 0%, #000000 100%);
 }
@@ -37,12 +37,11 @@ h1 {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 60px;
 }
 
-.card-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0;
+::-webkit-scrollbar {
+  display: none;
 }
 
 button {

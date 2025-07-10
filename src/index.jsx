@@ -10,6 +10,8 @@ function Index() {
     setisopen(!isopen);
   };
 
+  const projects = [1, 2, 3, 4]; // Can be objects instead
+
   return (
     <div>
       <Navbar toggle={toggle} />
@@ -58,19 +60,30 @@ function Index() {
         id="projects"
         className="container"
         style={{
-          minHeight: "100vh",
-
-          padding: "2rem 1rem",
+          padding: "4rem 1rem",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          gap: "2rem",
+          alignItems: "flex-start",
+
           perspective: "1000px",
         }}
       >
         <h2 style={{ fontSize: "3rem", marginTop: "0" }}>Projects</h2>
-        <div>
-          <Card />
+
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            overflowX: "auto",
+            scrollSnapType: "x mandatory",
+            paddingBottom: "1rem",
+          }}
+        >
+          {projects.map((_, i) => (
+            <div key={i} style={{ flex: "0 0 auto", scrollSnapAlign: "start" }}>
+              <Card />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -84,6 +97,7 @@ function Index() {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
+          padding: "2rem 1rem",
         }}
       >
         <div style={{ padding: "4rem 1rem", textAlign: "center" }}>

@@ -7,8 +7,7 @@ export default function Card() {
   const [xRotation, setXRotation] = useState(0);
   const [yRotation, setYRotation] = useState(0);
   const cardRef = useRef(null);
-  const imgRef = useRef(null);
-  const chipRef = useRef(null);
+  //const imgRef = useRef(null);
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const sizesboxRef = useRef(null);
@@ -25,7 +24,7 @@ export default function Card() {
     setYRotation((x / width) * mult);
   }
   function handleMouseEnter() {
-    const img = imgRef.current;
+    //const img = imgRef.current;
     const title = titleRef.current;
     const sizesBox = sizesboxRef.current;
     const purchase = purchaseRef.current;
@@ -33,7 +32,7 @@ export default function Card() {
     const chips = cardRef.current?.querySelectorAll(".chip");
 
     if (title) title.style.transform = "translateZ(150px)";
-    if (img) img.style.transform = "translateZ(100px) rotateZ(-45deg)";
+    //if (img) img.style.transform = "translateZ(100px) rotateZ(-45deg)";
     if (sizesBox) sizesBox.style.transform = "translateZ(100px)";
     if (purchase) purchase.style.transform = "translateZ(75px)";
     if (desc) desc.style.transform = "translateZ(75px)";
@@ -46,7 +45,7 @@ export default function Card() {
     setXRotation(0);
     setYRotation(0);
 
-    const img = imgRef.current;
+    //const img = imgRef.current;
     const title = titleRef.current;
     const sizesBox = sizesboxRef.current;
     const purchase = purchaseRef.current;
@@ -54,7 +53,7 @@ export default function Card() {
     const chips = cardRef.current?.querySelectorAll(".chip");
 
     if (title) title.style.transform = "translateZ(0px)";
-    if (img) img.style.transform = "translateZ(0px) rotateZ(0deg)";
+    //if (img) img.style.transform = "translateZ(0px) rotateZ(0deg)";
     if (sizesBox) sizesBox.style.transform = "translateZ(0px)";
     if (purchase) purchase.style.transform = "translateZ(0px)";
     if (desc) desc.style.transform = "translateZ(0px)";
@@ -73,12 +72,13 @@ export default function Card() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img
+      {/*<img
         ref={imgRef}
         src="https://images.unsplash.com/photo-1606813901444-c56f0c6f3d5e?auto=format&fit=crop&w=350&q=80"
         alt="Nike-Shoe"
         className="sneaaker-img"
       />
+*/}
       <h1 className="title" ref={titleRef}>
         Fake New Detection
       </h1>
