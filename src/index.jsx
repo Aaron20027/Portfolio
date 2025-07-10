@@ -86,11 +86,7 @@ function Index() {
         </div>
       </div>
 
-      <div
-        id="about"
-        className="container"
-        style={{ height: "100vh", background: "red" }}
-      >
+      <div id="about" className="container" style={{ height: "100vh" }}>
         <p>About Section</p>
         <p>
           An enthusiastic Computer Science student with hands-on experience in
@@ -107,7 +103,7 @@ function Index() {
         id="skills"
         className="container"
         style={{
-          background: "#1a1a1a",
+          background: "#0a0a0a",
           padding: "4rem 2rem",
           color: "#fff",
           gap: "2px",
