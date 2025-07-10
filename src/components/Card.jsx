@@ -29,15 +29,19 @@ export default function Card() {
     const title = titleRef.current;
     const sizesBox = sizesboxRef.current;
     const purchase = purchaseRef.current;
-    const chip = chipRef.current;
     const desc = descRef.current;
-    title.style.transform = "translateZ(150px)";
-    img.style.transform = "translateZ(100px) rotateZ(-45deg)";
-    sizesBox.style.transform = "translateZ(100px)";
-    purchase.style.transform = "translateZ(75px)";
-    chip.style.transform = "translateZ(75px)";
-    desc.style.transform = "translateZ(75px)";
+    const chips = cardRef.current?.querySelectorAll(".chip");
+
+    if (title) title.style.transform = "translateZ(150px)";
+    if (img) img.style.transform = "translateZ(100px) rotateZ(-45deg)";
+    if (sizesBox) sizesBox.style.transform = "translateZ(100px)";
+    if (purchase) purchase.style.transform = "translateZ(75px)";
+    if (desc) desc.style.transform = "translateZ(75px)";
+    chips?.forEach((chip) => {
+      chip.style.transform = "translateZ(75px)";
+    });
   }
+
   function handleMouseLeave() {
     setXRotation(0);
     setYRotation(0);
@@ -46,14 +50,18 @@ export default function Card() {
     const title = titleRef.current;
     const sizesBox = sizesboxRef.current;
     const purchase = purchaseRef.current;
-    const chip = chipRef.current;
-    title.style.transform = "translateZ(0px)";
-    img.style.transform = "translateZ(0px) rotateZ(0deg)";
-    sizesBox.style.transform = "translateZ(0px)";
-    purchase.style.transform = "translateZ(0px)";
-    chip.style.transform = "translateZ(0px)";
-  }
+    const desc = descRef.current;
+    const chips = cardRef.current?.querySelectorAll(".chip");
 
+    if (title) title.style.transform = "translateZ(0px)";
+    if (img) img.style.transform = "translateZ(0px) rotateZ(0deg)";
+    if (sizesBox) sizesBox.style.transform = "translateZ(0px)";
+    if (purchase) purchase.style.transform = "translateZ(0px)";
+    if (desc) desc.style.transform = "translateZ(0px)";
+    chips?.forEach((chip) => {
+      chip.style.transform = "translateZ(0px)";
+    });
+  }
   return (
     <div
       className="card"
@@ -84,15 +92,9 @@ export default function Card() {
           paddingLeft: "10px",
         }}
       >
-        <div className="chip" ref={chipRef}>
-          Python
-        </div>
-        <div className="chip" ref={chipRef}>
-          Flask
-        </div>
-        <div className="chip" ref={chipRef}>
-          PyTorch
-        </div>
+        <div className="chip">Python</div>
+        <div className="chip">Flask</div>
+        <div className="chip">PyTorch</div>
       </div>
       <p ref={descRef}>
         A web-based system that detects fake news using sentiment analysis and
@@ -102,7 +104,7 @@ export default function Card() {
       </p>
 
       <div className="button-box" ref={purchaseRef}>
-        <button className="purchase"> Purchase</button>
+        <button className="purchase"> Repo</button>
       </div>
     </div>
   );

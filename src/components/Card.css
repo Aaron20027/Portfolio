@@ -1,6 +1,7 @@
 .card {
   margin-left: 2rem;
   transform-style: preserve-3d;
+  transition: all 0.1s ease;
   position: relative;
   padding: 25px;
   width: 350px;
@@ -15,9 +16,14 @@
   /*background: linear-gradient(
     25deg,
     #ff0000 0%,
- Bright red  Black 
-  );*/
-  transition: all 0.1s ease;
+ Bright red  Black  
+  );
+  
+   transition: all 0.1s ease;*/
+}
+
+.card * {
+  backface-visibility: hidden;
 }
 .sneaaker-img {
   position: relative;
@@ -65,10 +71,10 @@
   font-weight: 600;
   background-color: rgba(248, 177, 60, 1);
   color: #000;
+  transition: all 0.1s ease;
 
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px;
-  transition: background-color 0.3s ease;
 }
 
 .chip:hover {
