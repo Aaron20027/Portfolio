@@ -98,6 +98,24 @@ function Index() {
           >
             I'm Aaron
           </h1>
+          <span
+            style={{
+              display: "inline-block",
+              width: "fit-content",
+              maxWidth: "100%",
+              backgroundColor: "rgba(248, 177, 60, 1)",
+              color: "black",
+              padding: "0.5rem 1rem",
+              borderRadius: "999px",
+              fontSize: "clamp(1rem, 2vw, 1.5rem)",
+              fontWeight: "500",
+              marginTop: "1rem",
+              whiteSpace: "nowrap",
+              lineHeight: 1.4,
+            }}
+          >
+            Aspiring Software Developer / Data Scientist
+          </span>
         </div>
 
         {/* Right Half (Image) */}
