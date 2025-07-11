@@ -38,6 +38,18 @@ function Index() {
       skills: ["Unity", "C#", "MySQL"],
       link: "https://github.com/your-repo-2",
     },
+    {
+      title: "Local Government Website",
+      text: "A responsive and user-friendly web platform for a Local Government Unit (LGU) that delivers essential information and services. It includes pages for announcements, news, downloadable forms, service guides, and contact form.",
+      skills: ["HTML", "CSS", "ASP.NET", "C#"],
+      link: "https://github.com/Aaron20027/MajayjayProject",
+    },
+    {
+      title: "Heart Attack Prediction",
+      text: "Enter your health information to instantly find out your risk of a heart attack. Our smart tool analyzes your data and gives you a quick, accurate prediction—helping you take control of your heart health.",
+      skills: ["Python", "Flask", "MySQL"],
+      link: "https://github.com/Aaron20027/Heart-Attack-Prediction",
+    },
   ];
 
   return (
