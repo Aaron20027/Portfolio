@@ -79,19 +79,6 @@ function Index() {
             I'm Aaron
           </h1>
 
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              marginTop: "2rem",
-              justifyContent: "flex-start",
-            }}
-          >
-            <div className="button-box" style={{ maxWidth: "250px" }}>
-              <button className="purchase">Download Resume</button>
-            </div>
-          </div>
-
           {/* IMAGE */}
           <img
             src={Me}
@@ -165,6 +152,28 @@ function Index() {
             development, with experience building responsive web applications
             and writing clean, maintainable code using modern frameworks.
           </p>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              marginTop: "2rem",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div className="button-box" style={{ maxWidth: "250px" }}>
+              <button
+                className="purchase"
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/Bernaldez_CV_Updated.pdf";
+                  link.download = "Aaron-Bernaldez-Resume.pdf";
+                  link.click();
+                }}
+              >
+                Download Resume
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
