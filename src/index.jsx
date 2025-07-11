@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "./components/Card";
 import Navbar from "./components/navbar";
 
-import Me from "./assets/Img.png";
+import Me from "./assets/me2.jpg";
 
 import CustomChipComp from "./components/CustomChipComp";
 
@@ -10,12 +10,9 @@ import { Grid, Typography, Box } from "@mui/material";
 
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
-function Index() {
-  const [isopen, setisopen] = useState(false);
-  const toggle = () => {
-    setisopen(!isopen);
-  };
+import { ReactTyped } from "react-typed";
 
+function Index() {
   const projects = [
     {
       title: "Fake News Detection",
@@ -45,53 +42,84 @@ function Index() {
 
   return (
     <div>
-      <Navbar toggle={toggle} />
+      <Navbar />
 
       <div
         id="main"
         style={{
           height: "100vh",
-          padding: "100px 15vw 100px 15vw",
+          display: "flex",
+          flexDirection: "row",
           boxSizing: "border-box",
-          position: "relative",
         }}
       >
-        <div style={{ position: "relative", display: "inline-block" }}>
+        {/* Left Half (Text) */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            paddingLeft: "5vw",
+            zIndex: 2,
+          }}
+        >
           <h1
             style={{
               fontSize: "clamp(2rem, 5vw, 5rem)",
               fontWeight: "normal",
-              marginTop: "7rem",
+              margin: 0,
             }}
           >
-            Hello world,
+            <ReactTyped
+              strings={[
+                "Hello World!", // English
+                "¡Hola Mundo!", // Spanish
+                "Hallo Welt!", // German
+                "Ciao Mondo!", // Italian
+                "Bonjour le Monde!", // French
+                "Olá Mundo!", // Portuguese
+                "こんにちは世界！", // Japanese (Konnichiwa Sekai!)
+                "안녕하세요 세계!", // Korean (Annyeonghaseyo Segye!)
+                "你好，世界！", // Chinese (Nǐ hǎo, shìjiè!)
+                "Привет, мир!", // Russian (Privet, mir!)
+              ]}
+              typeSpeed={50}
+              backSpeed={30}
+              loop
+            />
           </h1>
           <h1
             style={{
               fontSize: "clamp(3rem, 10vw, 10rem)",
               fontWeight: "bold",
-              marginTop: "0.5rem",
-              marginBottom: "0.5rem",
-              position: "relative",
-              zIndex: 2,
+              margin: "0.5rem 0",
             }}
           >
             I'm Aaron
           </h1>
+        </div>
 
-          {/* IMAGE */}
+        {/* Right Half (Image) */}
+        <div
+          style={{
+            flex: 1,
+            position: "relative",
+            height: "100vh",
+          }}
+        >
           <img
             src={Me}
             alt="Me"
             style={{
               position: "absolute",
-              top: "0%",
-              left: "80%",
-              width: "clamp(45vw, 35vw, 500px)",
-              height: "100vh",
-              maxWidth: "500px",
-              maxHeight: "82vh",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
               objectFit: "cover",
+              maxWidth: "100%",
+              maxHeight: "100%",
               zIndex: 1,
             }}
           />

@@ -46,6 +46,12 @@ nav.grow {
   height: 100%;
   cursor: pointer;
 }
+.link:active {
+  color: #ff5900;
+}
+.link:hover {
+  color: #ff5900;
+}
 .mobile-menu-icon {
   display: none;
 }
@@ -61,30 +67,75 @@ nav.grow {
 }
 .menu-items {
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex: 1;
+}
+.mobile-menu-icon {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
-  .menu-items,
-  .signup-button,
-  .github-corner {
+  .menu-items {
     display: none;
   }
+
   .mobile-menu-icon {
-    display: block;
-    color: white;
     display: flex;
+    color: white;
     align-items: center;
     font-size: 4vh;
     cursor: pointer;
-    top: 0;
-    right: 0;
+    z-index: 10001;
+  }
+
+  .mobile-popup-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 10rem;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  .mobile-popup-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+  }
+  .mobile-popup-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-popup-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 
-.github-corner {
-  position: fixed;
-  top: 0;
-  z-index: 99999;
-  right: 0px;
+@media screen and (min-width: 769px) {
+  .mobile-popup-menu {
+    display: none !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Card.css";
 
-import shoeImage from "./Shoe-img/Nike-Shoe.PNG";
-
 export default function Card({
   title,
   text,
@@ -31,7 +29,7 @@ export default function Card({
     const deltaX = x - centerX;
     const deltaY = centerY - y;
 
-    const mult = 25; // reduce multiplier to limit spin
+    const mult = 25;
     setXRotation((deltaY / centerY) * mult);
     setYRotation((deltaX / centerX) * mult);
   }

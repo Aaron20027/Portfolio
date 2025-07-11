@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const navbarItems = [
   {
@@ -26,7 +26,12 @@ const navbarItems = [
   },
 ];
 
-const Navbar = ({ toggle, isopen }) => {
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <nav>
       <span className="link logo">
@@ -59,11 +64,26 @@ const Navbar = ({ toggle, isopen }) => {
         ))}
       </div>
 
-      <div className="icons">
-        <div className="mobile-menu-icon">
-          <FaBars onClick={toggle} />
-        </div>
+      {/* Hamburger icon */}
+      <div className="mobile-menu-icon" onClick={toggle}>
+        {isOpen ? <FaTimes /> : <FaBars />}
       </div>
+
+      {/* Popup menu */}
+      {isOpen && (
+        <div className="mobile-popup-menu">
+          {navbarItems.map((item, index) => (
+            <a
+              key={index}
+              className="link"
+              href={item.link}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.title}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

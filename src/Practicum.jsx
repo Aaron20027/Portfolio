@@ -4,9 +4,6 @@ import Navbar from "./components/navbar";
 import Me from "./assets/PetroEnergy_Logo.png";
 import Comp from "./assets/comp.jpg";
 function Practicum() {
-  const [isopen, setisopen] = useState(false);
-  const toggle = () => setisopen(!isopen);
-
   const sharedPadding = {
     paddingLeft: "4rem",
     paddingRight: "4rem",
@@ -18,7 +15,7 @@ function Practicum() {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       />
-      <Navbar toggle={toggle} />
+      <Navbar />
 
       {/* Header Section */}
       <div
