@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "./components/Card";
 import Navbar from "./components/navbar";
 
-import Me from "./assets/Me.jpg";
+import Me from "./assets/Img.png";
 
 import CustomChipComp from "./components/CustomChipComp";
 
@@ -16,7 +16,32 @@ function Index() {
     setisopen(!isopen);
   };
 
-  const projects = [1, 2, 3, 4, 5, 6]; // Can be objects instead
+  const projects = [
+    {
+      title: "Fake News Detection",
+      text: " A web-based system that detects fake news using sentiment analysis and deep learning to help users identify misleading information. It leverages BERT for contextual understanding and VADER for sentiment scoring to enhance detection accuracy.",
+      skills: ["Python", "Flask", "PyTorch"],
+      link: "https://github.com/Aaron20027/FakeNewDetection",
+    },
+    {
+      title: "PetroDash",
+      text: "PetroDash is a web application designed to help Petrogroup efficiently manage, analyze, and visualize its ESG (Environmental, Social, and Governance) and CSR (Corporate Social Responsibility) data. Built with usability and scalability in mind, the platform transforms raw sustainability data—initially sourced from Excel—into structured, actionable insights.",
+      skills: ["Python", "React", "Material UI", "PostgreSQL "],
+      link: "https://github.com/ThatOneLeaf/PetroDash-WEB",
+    },
+    {
+      title: "Paparonie's Pizza Mobile POS",
+      text: "Paparonie's Pizza Mobile POS is a mobile Point of Sale (POS) system built with Java in Android Studio. The app provides a simple and efficient interface tailored for fast-paced environments like pizza shops.",
+      skills: ["Android Studio", "Java"],
+      link: "https://github.com/Aaron20027/MobilePOS",
+    },
+    {
+      title: "Wanderer",
+      text: "Wanderer is a 2D platformer made in Unity where your goal is to survive, upgrade, and chase high scores. You start in a lush forest, dodging traps, collecting coins, and battling enemies. After each run, you visit a shop to buy upgrades like double jump, speed boost, or extra health. Next, dive into a dark, dangerous cave with tougher enemies and bigger rewards. Survive the cave to loop back into a more challenging forest stage",
+      skills: ["Unity", "C#", "MySQL"],
+      link: "https://github.com/your-repo-2",
+    },
+  ];
 
   return (
     <div>
@@ -48,7 +73,7 @@ function Index() {
               marginTop: "0.5rem",
               marginBottom: "0.5rem",
               position: "relative",
-              zIndex: 2, // Text stays on top
+              zIndex: 2,
             }}
           >
             I'm Aaron
@@ -75,10 +100,10 @@ function Index() {
               position: "absolute",
               top: "0%",
               left: "80%",
-              width: "clamp(45vw, 35vw, 500px)", // ✅ wider
+              width: "clamp(45vw, 35vw, 500px)",
               height: "100vh",
               maxWidth: "500px",
-              maxHeight: "82vh", // ✅ less tall
+              maxHeight: "82vh",
               objectFit: "cover",
               zIndex: 1,
             }}
@@ -86,17 +111,61 @@ function Index() {
         </div>
       </div>
 
-      <div id="about" className="container" style={{ height: "100vh" }}>
-        <p>About Section</p>
-        <p>
-          An enthusiastic Computer Science student with hands-on experience in
-          machine learning, data wrangling, and model deployment through
-          academic and personal projects. Proficient in Python, SQL, and data
-          visualization. Eager to contribute analytical and problem-solving
-          skills to real-world tech challenges. Also passionate about software
-          development, with experience building responsive web applications and
-          writing clean, maintainable code using modern frameworks.
-        </p>
+      <div
+        id="about"
+        className="container"
+        style={{
+          height: "auto",
+          display: "flex",
+          alignItems: "center",
+          padding: "2rem",
+        }}
+      >
+        {/* LEFT: Image */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+          }}
+        >
+          <div
+            style={{
+              width: "90%",
+              maxWidth: "450px",
+              height: "600px",
+              overflow: "hidden",
+
+              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+            }}
+          >
+            <img
+              src={Me}
+              alt="Me"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* RIGHT: About Text */}
+        <div style={{ flex: 1, paddingLeft: "2rem" }}>
+          <h2 style={{ fontSize: "3rem", marginTop: "0" }}>About Me</h2>
+          <p>
+            An enthusiastic Computer Science student with hands-on experience in
+            machine learning, data wrangling, and model deployment through
+            academic and personal projects. Proficient in Python, SQL, and data
+            visualization. Eager to contribute analytical and problem-solving
+            skills to real-world tech challenges. Also passionate about software
+            development, with experience building responsive web applications
+            and writing clean, maintainable code using modern frameworks.
+          </p>
+        </div>
       </div>
 
       <div
@@ -202,9 +271,15 @@ function Index() {
 
         <Box mt={4}>
           <Grid container spacing={4}>
-            {projects.slice(0, 6).map((_, i) => (
+            {projects.slice(0, 6).map((project, i) => (
               <Grid item xs={12} sm={6} md={4} key={i}>
-                <Card />
+                <Card
+                  title={project.title}
+                  text={project.text}
+                  skills={project.skills}
+                  buttonLabel="View Repo"
+                  onButtonClick={() => window.open(project.link, "_blank")}
+                />
               </Grid>
             ))}
           </Grid>

@@ -3,7 +3,13 @@ import "./Card.css";
 
 import shoeImage from "./Shoe-img/Nike-Shoe.PNG";
 
-export default function Card() {
+export default function Card({
+  title,
+  text,
+  skills = [],
+  buttonLabel = "Repo",
+  onButtonClick,
+}) {
   const [xRotation, setXRotation] = useState(0);
   const [yRotation, setYRotation] = useState(0);
   const cardRef = useRef(null);
@@ -85,11 +91,12 @@ export default function Card() {
         className="sneaaker-img"
       />
 */}
-      <h1 className="title" ref={titleRef}>
-        Fake New Detection
+      <h1 className="title" ref={titleRef} style={{ fontSize: "3rem" }}>
+        {title}
       </h1>
 
       <div
+        ref={sizesboxRef}
         style={{
           display: "flex",
           gap: "5px",
@@ -98,19 +105,19 @@ export default function Card() {
           paddingLeft: "10px",
         }}
       >
-        <div className="chip">Python</div>
-        <div className="chip">Flask</div>
-        <div className="chip">PyTorch</div>
+        {skills.map((skill, index) => (
+          <div key={index} className="chip">
+            {skill}
+          </div>
+        ))}
       </div>
-      <p ref={descRef}>
-        A web-based system that detects fake news using sentiment analysis and
-        deep learning to help users identify misleading information. It
-        leverages BERT for contextual understanding and VADER for sentiment
-        scoring to enhance detection accuracy.
-      </p>
+
+      <p ref={descRef}>{text}</p>
 
       <div className="button-box" ref={purchaseRef}>
-        <button className="purchase"> Repo</button>
+        <button className="purchase" onClick={onButtonClick}>
+          {buttonLabel}
+        </button>
       </div>
     </div>
   );
