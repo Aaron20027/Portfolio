@@ -26,7 +26,7 @@ const navbarItems = [
   },
 ];
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, isopen }) => {
   return (
     <nav>
       <span className="link logo">
