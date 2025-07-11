@@ -5,24 +5,24 @@ import { FaBars } from "react-icons/fa";
 const navbarItems = [
   {
     title: "About",
-    link: "#about",
+    link: "/#about",
   },
   {
     title: "Skills",
-    link: "#skills",
+    link: "/#skills",
   },
   {
     title: "Projects",
-    link: "#projects",
+    link: "/#projects",
   },
   {
     title: "Contact",
-    link: "#contact",
+    link: "/#contact",
   },
 
   {
     title: "Practicum",
-    link: "#",
+    link: "/practicum",
   },
 ];
 
