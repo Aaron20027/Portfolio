@@ -36,7 +36,7 @@ function Index() {
       title: "Wanderer",
       text: "Wanderer is a 2D platformer made in Unity where your goal is to survive, upgrade, and chase high scores. You start in a lush forest, dodging traps, collecting coins, and battling enemies. After each run, you visit a shop to buy upgrades like double jump, speed boost, or extra health. Next, dive into a dark, dangerous cave with tougher enemies and bigger rewards. Survive the cave to loop back into a more challenging forest stage",
       skills: ["Unity", "C#", "MySQL"],
-      link: "https://github.com/your-repo-2",
+      link: "https://github.com/Machoo28/WANDER",
     },
     {
       title: "Local Government Website",

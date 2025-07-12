@@ -264,7 +264,7 @@ function Practicum() {
           className="purchase"
           onClick={() => {
             const link = document.createElement("a");
-            link.href = "/Bernaldez_CV_Updated.pdf";
+            link.href = "/Practicum_Narrative_Report.pdf";
             link.download = "Aaron-Bernaldez-Resume.pdf";
             link.click();
           }}
