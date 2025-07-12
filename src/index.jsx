@@ -21,8 +21,8 @@ function Index() {
       link: "https://github.com/Aaron20027/FakeNewDetection",
     },
     {
-      title: "PetroDash",
-      text: "PetroDash is a web application designed to help Petrogroup efficiently manage, analyze, and visualize its ESG (Environmental, Social, and Governance) and CSR (Corporate Social Responsibility) data. Built with usability and scalability in mind, the platform transforms raw sustainability data—initially sourced from Excel—into structured, actionable insights.",
+      title: "ESGDash",
+      text: "ESGDash is a web application designed to help Petrogroup efficiently manage, analyze, and visualize its ESG (Environmental, Social, and Governance) and CSR (Corporate Social Responsibility) data. Built with usability and scalability in mind, the platform transforms raw sustainability data—initially sourced from Excel—into structured, actionable insights.",
       skills: ["Python", "React", "Material UI", "PostgreSQL "],
       link: "https://github.com/ThatOneLeaf/PetroDash-WEB",
     },
